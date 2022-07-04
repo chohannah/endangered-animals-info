@@ -1,4 +1,5 @@
 import { Component } from "react";
+import SearchBar from "./components/search-bar/search-bar.component";
 import CardGroup from "./components/card-group/card-group.component";
 import "./App.css";
 
@@ -33,8 +34,6 @@ class App extends Component {
   };
 
   render() {
-    console.log("rendered!!");
-
     const { animals, searchField } = this.state;
     const { onFieldChange } = this;
 
@@ -44,13 +43,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <input
-          className="search-bar"
-          type="search"
-          placeholder="search here"
-          onChange={onFieldChange}
-        />
-
+        <SearchBar placeholder="search here" onChangeHandler={onFieldChange} />
         <CardGroup animals={filteredAnimals} />
       </div>
     );
