@@ -1,4 +1,5 @@
 import { Component } from "react";
+import CardGroup from "./components/card-group/card-group.component";
 import "./App.css";
 
 class App extends Component {
@@ -49,13 +50,8 @@ class App extends Component {
           placeholder="search here"
           onChange={onFieldChange}
         />
-        {filteredAnimals.map((animal) => {
-          return (
-            <article key={animal.id}>
-              <h2>{animal.name}</h2>
-            </article>
-          );
-        })}
+
+        <CardGroup animals={filteredAnimals} />
       </div>
     );
   }
