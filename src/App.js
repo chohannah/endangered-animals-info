@@ -10,12 +10,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch("https://f21b4e44-00af-416a-a8bf-ccb499e75957.mock.pstmn.io")
       .then((response) => response.json())
-      .then((users) =>
+      .then((animals) =>
         this.setState(
           () => {
-            return { animals: users };
+            return { animals };
           },
           () => {
             console.log(this.state);
@@ -38,7 +38,7 @@ class App extends Component {
     const { onFieldChange } = this;
 
     const filteredAnimals = animals.filter((animal) => {
-      return animal.name.toLocaleLowerCase().includes(searchField);
+      return animal.name.common.toLocaleLowerCase().includes(searchField);
     });
 
     return (
