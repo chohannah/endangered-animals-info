@@ -34,8 +34,11 @@ class App extends Component {
   render() {
     console.log("rendered!!");
 
-    const filteredAnimals = this.state.animals.filter((animal) => {
-      return animal.name.toLocaleLowerCase().includes(this.state.searchField);
+    const { animals, searchField } = this.state;
+    const { onFieldChange } = this;
+
+    const filteredAnimals = animals.filter((animal) => {
+      return animal.name.toLocaleLowerCase().includes(searchField);
     });
 
     return (
@@ -44,7 +47,7 @@ class App extends Component {
           className="search-bar"
           type="search"
           placeholder="search here"
-          onChange={this.onFieldChange}
+          onChange={onFieldChange}
         />
         {filteredAnimals.map((animal) => {
           return (
