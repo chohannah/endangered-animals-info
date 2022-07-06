@@ -7,16 +7,24 @@ class CardGroup extends Component {
     return (
       <div className="card-group">
         {animals.map((animal) => {
+          const {
+            id,
+            image,
+            conservation_status,
+            name: { common, scientific },
+          } = animal;
+          const urlAnimalName = common.toLocaleLowerCase().replaceAll(" ", "-");
+
           return (
-            <article key={animal.id}>
+            <article key={id}>
               <a
-                href={`https://www.worldwildlife.org/species/${animal.species}`}
-                alt={`Click to learn more about ${animal.name.common}`}
+                href={`https://www.worldwildlife.org/species/${urlAnimalName}`}
+                alt={`Click to learn more about ${common}`}
               >
-                <img src={animal.image} alt={`${animal.name.common}`} />
-                <h2>{animal.name.common}</h2>
-                <p>{animal.name.scientific}</p>
-                <strong>{animal.conservation_status}</strong>
+                <img src={image} alt={`${common}`} />
+                <h2>{common}</h2>
+                <p>{scientific}</p>
+                <strong>{conservation_status}</strong>
               </a>
             </article>
           );
