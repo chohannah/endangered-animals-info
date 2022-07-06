@@ -13,14 +13,9 @@ class App extends Component {
     fetch("https://f21b4e44-00af-416a-a8bf-ccb499e75957.mock.pstmn.io")
       .then((response) => response.json())
       .then((animals) =>
-        this.setState(
-          () => {
-            return { animals };
-          },
-          () => {
-            console.log(this.state);
-          }
-        )
+        this.setState(() => {
+          return { animals };
+        })
       )
       .catch((err) => console.error(err));
   }
