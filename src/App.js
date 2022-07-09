@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SearchBar from "./components/search-bar/search-bar.component";
 import CardGroup from "./components/card-group/card-group.component";
-import "./App.css";
 
 const App = () => {
   const [searchField, setSearchField] = useState("");
