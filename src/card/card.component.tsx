@@ -1,4 +1,10 @@
-const Card = ({ animal }) => {
+import { Animal } from "../types/animal";
+
+type CardProps = {
+  animal: Animal;
+};
+
+const Card = ({ animal }: CardProps) => {
   const {
     image,
     conservation_status,
@@ -10,7 +16,7 @@ const Card = ({ animal }) => {
     <article className="card">
       <a
         href={`https://www.worldwildlife.org/species/${urlAnimalName}`}
-        alt={`Click to learn more about ${common}`}
+        // alt={`Click to learn more about ${common}`}
         target="_blank"
         rel="noreferrer"
       >
