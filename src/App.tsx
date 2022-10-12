@@ -1,16 +1,25 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, ChangeEvent } from "react";
+
+import { getData } from "./utils/data.utils";
+
 import SearchBar from "./components/search-bar/search-bar.component";
 import CardGroup from "./components/card-group/card-group.component";
+import { Animal } from "./types/animal";
 
 const App = () => {
   const [searchField, setSearchField] = useState("");
-  const [animals, setAnimals] = useState([]);
+  const [animals, setAnimals] = useState<Animal[]>([]);
   const [filteredAnimals, setfilteredAnimals] = useState(animals);
 
   useEffect(() => {
-    fetch("https://f21b4e44-00af-416a-a8bf-ccb499e75957.mock.pstmn.io")
-      .then((response) => response.json())
-      .then((animals) => setAnimals(animals));
+    const fetchUsers = async () => {
+      const users = await getData<Animal[]>(
+        "https://f21b4e44-00af-416a-a8bf-ccb499e75957.mock.pstmn.io"
+      );
+      setAnimals(users);
+    };
+
+    fetchUsers();
   }, []);
 
   useEffect(() => {
@@ -21,14 +30,18 @@ const App = () => {
     setfilteredAnimals(newFilteredAnimals);
   }, [animals, searchField]);
 
-  const onFieldChange = (e) => {
+  const onFieldChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const searchFieldText = e.target.value.toLocaleLowerCase();
     setSearchField(searchFieldText);
   };
 
   return (
     <div className="App">
-      <SearchBar placeholder="search here" onChangeHandler={onFieldChange} />
+      <SearchBar
+        className="search-bar"
+        placeholder="search here"
+        onChangeHandler={onFieldChange}
+      />
       <CardGroup animals={filteredAnimals} />
     </div>
   );
