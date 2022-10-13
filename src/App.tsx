@@ -40,7 +40,7 @@ const App = () => {
       <SearchBar
         className="search-bar"
         placeholder="search here"
-        onChangeHandler={onFieldChange}
+        handleOnChange={onFieldChange}
       />
       <CardGroup animals={filteredAnimals} />
     </div>
