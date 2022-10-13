@@ -1,6 +1,12 @@
+import { Animal } from "../../types/animal";
+
 import Card from "../../card/card.component";
 
-const CardGroup = ({ animals }) => {
+type CardGroupProps = {
+  animals: Animal[];
+};
+
+const CardGroup = ({ animals }: CardGroupProps) => {
   return (
     <main className="card-group">
       {animals.map((animal) => {
