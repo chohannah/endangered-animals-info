@@ -1,8 +1,7 @@
-import { theme as base } from "@chakra-ui/react";
-
 const fonts = {
-  heading: `"WWF", sans-serif ${base.fonts?.heading}`,
-  body: `"Georgia", serif ${base.fonts?.body}`,
-};
+  heading: `'WWF', sans-serif`,
+  body: `'Georgia', serif`,
+  mono: `'Open Sans', sans-serif`, // highlighed font
+}
 
-export default fonts;
+export default fonts
