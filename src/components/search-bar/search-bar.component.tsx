@@ -1,22 +1,26 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent } from 'react'
+import { Input } from '@chakra-ui/react'
 
 type SearchBoxProps = {
-  className: string;
-  placeholder?: string;
-  handleOnChange: (event: ChangeEvent<HTMLInputElement>) => void;
-};
+  className: string
+  placeholder?: string
+  handleOnChange: (event: ChangeEvent<HTMLInputElement>) => void
+}
 
 const SearchBar = ({ placeholder, handleOnChange }: SearchBoxProps) => {
   return (
-    <div className="search-bar">
-      <input
-        className="search-bar"
-        type="search"
-        placeholder={placeholder}
-        onChange={handleOnChange}
-      />
-    </div>
-  );
-};
+    <Input
+      type="search"
+      placeholder={placeholder}
+      onChange={handleOnChange}
+      variant="filled"
+      mb={{ sm: 12 }}
+      background="redOrange.300"
+      focusBorderColor="redOrange.900"
+      _hover={{ background: 'redOrange.600' }}
+      _placeholder={{ opacity: 0.4, color: 'inherit' }}
+    />
+  )
+}
 
-export default SearchBar;
+export default SearchBar
