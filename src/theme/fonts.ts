@@ -1,7 +1,7 @@
 const fonts = {
   heading: `'WWF', sans-serif`,
-  body: `'Georgia', serif`,
-  mono: `'Open Sans', sans-serif`, // highlighed font
+  body: `'Open Sans', sans-serif`,
+  mono: `'Georgia', serif`, // highlighed font
 }
 
 export default fonts
