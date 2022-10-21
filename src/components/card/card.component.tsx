@@ -73,7 +73,7 @@ const Card = ({ animal }: CardProps) => {
           flexShrink="1"
           p="4"
           backdropFilter="auto"
-          backdropBlur="18px"
+          backdropBlur="24px"
         >
           <Flex justifyContent="space-between">
             <Heading
@@ -83,6 +83,7 @@ const Card = ({ animal }: CardProps) => {
               fontWeight="black"
               letterSpacing="tighter"
               textTransform="uppercase"
+              color={useColorModeValue('black', 'white')}
               _hover={{ as: 'mark' }}
             >
               {common}
@@ -107,29 +108,27 @@ const Card = ({ animal }: CardProps) => {
             size={{ base: 'xs', md: 'sm' }}
             fontFamily={fonts.mono}
             fontStyle="italic"
-            color="#22222290" // black
+            color={useColorModeValue('#22222290', '#ffffff90')} // black
           >
             {scientific}
           </Text>
 
-          <ButtonGroup
-            size="md"
-            // flexDirection={{ base: 'column', md: 'row' }}
-            // justifyContent={{ base: 'start', md: 'center' }}
-            // spacing="2"
-          >
+          <ButtonGroup size="md">
             <Button
               variant="solid"
               w={{ base: '100%', md: '50%' }}
               backgroundColor={useColorModeValue('#ffffff20', '#22222270')} // white, black
               color="yellowOrange"
-              border="none"
+              _hover={{
+                backgroundColor: useColorModeValue('#ffffff40', '#22222290'),
+              }}
             >
               <Link
                 href={`https://www.worldwildlife.org/species/${urlToAnimal}`}
                 isExternal
                 fontFamily={fonts.heading}
                 fontSize={{ base: 'md', md: 'lg' }}
+                _hover={{ textTransform: 'none' }}
               >
                 Learn more
               </Link>
@@ -138,12 +137,16 @@ const Card = ({ animal }: CardProps) => {
               w={{ base: '100%', md: '50%' }}
               backgroundColor="yellowOrange"
               color="black"
+              _hover={{
+                backgroundColor: '#fec01e80', // yellowOrange
+              }}
             >
               <Link
                 href={`https://gifts.worldwildlife.org/gift-center/gifts/Species-Adoptions/${urlToAdopt}.aspx`}
                 isExternal
                 fontFamily={fonts.heading}
                 fontSize={{ base: 'md', md: 'lg' }}
+                _hover={{ textTransform: 'none' }}
               >
                 Adopt
               </Link>
