@@ -1,24 +1,54 @@
+import { color } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
+
 import colors from './colors'
+import fonts from './fonts'
+
+const CLOSE_ICON =
+  'https://raw.githubusercontent.com/feathericons/feather/master/icons/x.svg'
 
 const styles = {
+  // custom reset CSS
   global: {
-    html: {
-      color: colors.black,
+    '*': {
+      boxSizing: 'border-box',
+      margin: '0',
+      fontFamily: fonts.body,
     },
-    body: {
-      color: colors.black,
-      bg: mode('#f0e7db', '#202023'),
+    '::selection': {
+      color: colors.yellow,
+      backgroundColor: colors.black,
+    },
+    '::-moz-selection': {
+      /* Code for Firefox */
+      color: colors.yellow,
+      backgroundColor: colors.black,
     },
     '::-webkit-search-cancel-button': {
-      '-webkit-appearance': 'none',
+      WebkitAppreance: 'none',
       height: '1em',
       width: '1em',
       opacity: '0.6',
-      color: '#222',
-      background:
-        'url(https://raw.githubusercontent.com/feathericons/feather/master/icons/x.svg) no-repeat 50% 50%',
-      'background-size': 'contain',
+      color: color.black,
+      background: `url(${CLOSE_ICON}) no-repeat 50% 50%`,
+      backgroundSize: 'contain',
+    },
+
+    html: {
+      color: colors.black,
+    },
+
+    body: {
+      color: colors.black,
+      bg: mode('gray.100', 'black'),
+    },
+
+    h1: {
+      margin: '0',
+    },
+
+    button: {
+      fontFamily: fonts.heading,
     },
   },
 }
