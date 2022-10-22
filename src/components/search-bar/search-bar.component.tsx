@@ -1,5 +1,5 @@
 import { ChangeEvent } from 'react'
-import { Input } from '@chakra-ui/react'
+import { Input, useColorModeValue } from '@chakra-ui/react'
 
 type SearchBoxProps = {
   className: string
@@ -15,10 +15,13 @@ const SearchBar = ({ placeholder, handleOnChange }: SearchBoxProps) => {
       onChange={handleOnChange}
       variant="filled"
       mb={{ sm: 12 }}
-      background="redOrange.300"
-      focusBorderColor="redOrange.900"
-      _hover={{ background: 'redOrange.600' }}
-      _placeholder={{ opacity: 0.4, color: 'inherit' }}
+      background="#fec01e60"
+      focusBorderColor="#fec01e"
+      _hover={{ background: '#fec01e90' }}
+      _placeholder={{
+        opacity: 0.4,
+        color: useColorModeValue('inherit', 'white'),
+      }}
     />
   )
 }
