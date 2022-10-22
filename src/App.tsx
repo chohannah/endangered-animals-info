@@ -7,6 +7,7 @@ import { Animal } from './types/animal'
 import { getData } from './utils/data.utils'
 import { NAV_HEIGHT } from './utils/style.utils'
 
+import Navbar from './components/navbar/navbar.component'
 import SearchBar from './components/search-bar/search-bar.component'
 import CardGroup from './components/card-group/card-group.component'
 
@@ -41,6 +42,7 @@ const App = () => {
 
   return (
     <>
+      <Navbar />
       <Container maxW="6xl">
         <Flex
           as="main"
