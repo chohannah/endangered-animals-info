@@ -1,11 +1,11 @@
 import { useEffect, useState, ChangeEvent } from 'react'
 
-import { Link, Text, Container, Flex, Heading } from '@chakra-ui/react'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { Container, Flex, Heading, useColorModeValue } from '@chakra-ui/react'
 
 import { Animal } from './types/animal'
 
 import { getData } from './utils/data.utils'
+import { NAV_HEIGHT } from './utils/style.utils'
 
 import SearchBar from './components/search-bar/search-bar.component'
 import CardGroup from './components/card-group/card-group.component'
@@ -40,25 +40,34 @@ const App = () => {
   }
 
   return (
-    <Container as="main" maxW="6xl">
-      <Flex direction="column" justify="start">
-        <Heading
-          size={{ sm: 'lg', md: '2xl' }}
-          textAlign="center"
-          mb={{ sm: 8 }}
+    <>
+      <Container maxW="6xl">
+        <Flex
+          as="main"
+          direction="column"
+          justify={{ base: 'center', md: 'start' }}
         >
-          endangered animals info
-        </Heading>
+          <Heading
+            size={{ base: 'lg', md: '2xl' }}
+            mt={NAV_HEIGHT + 8}
+            mb={{ base: 8 }}
+            textAlign="center"
+            color={useColorModeValue('black', 'gray.100')}
+            textTransform="uppercase"
+          >
+            endangered animals info
+          </Heading>
 
-        <SearchBar
-          className="search-bar"
-          placeholder="search here"
-          handleOnChange={onFieldChange}
-        />
+          <SearchBar
+            className="search-bar"
+            placeholder="search here"
+            handleOnChange={onFieldChange}
+          />
 
-        <CardGroup animals={filteredAnimals} />
-      </Flex>
-    </Container>
+          <CardGroup animals={filteredAnimals} />
+        </Flex>
+      </Container>
+    </>
   )
 }
 
