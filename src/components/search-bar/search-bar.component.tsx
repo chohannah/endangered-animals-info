@@ -14,7 +14,7 @@ const SearchBar = ({ placeholder, handleOnChange }: SearchBoxProps) => {
       placeholder={placeholder}
       onChange={handleOnChange}
       variant="filled"
-      mb={{ sm: 12 }}
+      mb={{ base: 8, md: 16 }}
       background="#fec01e60"
       focusBorderColor="#fec01e"
       _hover={{ background: '#fec01e90' }}
