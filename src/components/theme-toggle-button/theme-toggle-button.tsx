@@ -24,6 +24,7 @@ const ThemeToggleButton = () => {
             <MoonIcon color="blueViolet" />,
             <SunIcon color="blueGreen" />
           )}
+          _hover={{ opacity: '0.6' }}
           onClick={toggleColorMode}
         ></IconButton>
       </motion.div>
