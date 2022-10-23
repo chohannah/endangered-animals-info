@@ -1,20 +1,21 @@
 import { ReactNode } from 'react'
 import {
-  Box,
   Flex,
+  Stack,
+  Box,
   Button,
   Link,
+  Heading,
   useColorModeValue,
-  Stack,
 } from '@chakra-ui/react'
 import ThemeToggleButton from '../theme-toggle-button/theme-toggle-button'
 
 import { NAV_HEIGHT } from '../../utils/style.utils'
 
-const links = {
-  donate:
+const CTA_LINKS = {
+  DONATE:
     'https://support.worldwildlife.org/site/SPageServer?pagename=main_monthly&s_src=AWE2209OQ18299A01179RX&s_subsrc=topnav',
-  adopt:
+  ADOPT:
     'https://gifts.worldwildlife.org/gift-center/gifts/Species-Adoptions.aspx',
 }
 
@@ -64,15 +65,18 @@ const Navbar = () => {
       w="100vw"
       bg={useColorModeValue('#efeff070', '#22222280')}
     >
-      <Flex h={NAV_HEIGHT} alignItems="center" justifyContent="space-between">
-        <Box>Logo</Box>
-
+      <Flex
+        flexDirection="row"
+        justifyContent="space-between"
+        alignItems="center"
+        h={NAV_HEIGHT}
+      >
         <Flex alignItems="center" gap="2">
           <Stack direction="row" spacing="2">
-            <NavLink href={links.donate} backgroundColor="redOrange.900">
+            <NavLink href={CTA_LINKS.DONATE} backgroundColor="redOrange.900">
               Donate
             </NavLink>
-            <NavLink href={links.adopt} backgroundColor="orange">
+            <NavLink href={CTA_LINKS.ADOPT} backgroundColor="orange">
               Adopt
             </NavLink>
           </Stack>
