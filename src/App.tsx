@@ -10,6 +10,7 @@ import { NAV_HEIGHT } from './utils/style.utils'
 import Navbar from './components/navbar/navbar.component'
 import SearchBar from './components/search-bar/search-bar.component'
 import CardGroup from './components/card-group/card-group.component'
+import Footer from './components/footer/footer.component'
 
 const App = () => {
   const [searchField, setSearchField] = useState('')
@@ -51,8 +52,8 @@ const App = () => {
         >
           <Heading
             size={{ base: 'lg', md: '2xl' }}
-            mt={NAV_HEIGHT + 8}
-            mb={{ base: 8 }}
+            mt={{ base: NAV_HEIGHT + 8, md: NAV_HEIGHT + 16 }}
+            mb={{ base: 8, md: 16 }}
             textAlign="center"
             color={useColorModeValue('black', 'gray.100')}
             textTransform="uppercase"
@@ -69,6 +70,7 @@ const App = () => {
           <CardGroup animals={filteredAnimals} />
         </Flex>
       </Container>
+      <Footer />
     </>
   )
 }
