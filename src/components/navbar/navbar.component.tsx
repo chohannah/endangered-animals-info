@@ -20,11 +20,12 @@ const links = {
 
 const NavLink = ({
   href,
+
   backgroundColor,
   children,
 }: {
   href: string
-  color: string
+
   backgroundColor: string
   children: ReactNode
 }) => (
@@ -68,10 +69,10 @@ const Navbar = () => {
 
         <Flex alignItems="center" gap="2">
           <Stack direction="row" spacing="2">
-            <NavLink href={links.donate} backgroundColor="red" color="white">
+            <NavLink href={links.donate} backgroundColor="redOrange.900">
               Donate
             </NavLink>
-            <NavLink href={links.adopt} backgroundColor="orange" color="white">
+            <NavLink href={links.adopt} backgroundColor="orange">
               Adopt
             </NavLink>
           </Stack>
