@@ -12,6 +12,8 @@ import ThemeToggleButton from '../theme-toggle-button/theme-toggle-button'
 
 import { NAV_HEIGHT } from '../../utils/style.utils'
 
+import { LogoIcon } from './logo.component'
+
 const CTA_LINKS = {
   DONATE:
     'https://support.worldwildlife.org/site/SPageServer?pagename=main_monthly&s_src=AWE2209OQ18299A01179RX&s_subsrc=topnav',
@@ -21,12 +23,10 @@ const CTA_LINKS = {
 
 const NavLink = ({
   href,
-
   backgroundColor,
   children,
 }: {
   href: string
-
   backgroundColor: string
   children: ReactNode
 }) => (
@@ -71,6 +71,30 @@ const Navbar = () => {
         alignItems="center"
         h={NAV_HEIGHT}
       >
+        <Heading
+          as="h1"
+          flexDirection="row"
+          justifyContent="center"
+          alignItems="center"
+          h="100%"
+        >
+          <Link
+            href="/"
+            aria-label="Endangered Animals Info"
+            display="flex"
+            flexDirection="row"
+            justifyContent="center"
+            alignItems="center"
+            h="100%"
+          >
+            <LogoIcon
+              display="block"
+              w="100%"
+              color={useColorModeValue('black', 'white')}
+            />
+          </Link>
+        </Heading>
+
         <Flex alignItems="center" gap="2">
           <Stack direction="row" spacing="2">
             <NavLink href={CTA_LINKS.DONATE} backgroundColor="redOrange.900">
