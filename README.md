@@ -7,12 +7,11 @@
   <img width="120px;" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/panda_1f43c.png"/>
 </div>
 <h1 align="middle">Endangered Animals Info </h2>
-<p align="middle">A list of endangered animals registered as </p>
+<p align="middle">A directory of endangered animals registered at <a href='https://www.worldwildlife.org/' target='_blank'>WWF</a></p>
 
 <p align="middle">
   <img src="https://img.shields.io/badge/version-1.0.0-F1F0E7?style=flat-square" alt="template version"/>
   <img src="https://img.shields.io/badge/language-React-61DBFB.svg?style=flat-square"/>
-  <img src="https://img.shields.io/badge/language-Redux-764ABC"/>
   <img src="https://img.shields.io/badge/language-Typescript-225A97"/>
   <img src="https://img.shields.io/badge/language-ChakraUI-81E6D9"/>
   <img src="https://img.shields.io/badge/license-MIT-8B8C8D.svg?style=flat-square"/>
