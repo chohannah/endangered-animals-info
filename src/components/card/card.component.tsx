@@ -104,7 +104,7 @@ const Card = ({ animal }: CardProps) => {
           </Flex>
 
           <Text
-            mb={{ base: '6' }}
+            mb={{ base: '4' }}
             size={{ base: 'xs', md: 'sm' }}
             fontFamily={fonts.mono}
             fontStyle="italic"
