@@ -21,7 +21,7 @@ const CardGroup = ({ animals }: CardGroupProps) => {
     >
       <SimpleGrid
         as="section"
-        columns={{ base: 1, md: 2, lg: 3 }}
+        columns={{ base: 1, md: 2 }}
         spacingY="27"
         spacingX={{ base: 0, md: 27 }}
         w="100%"
