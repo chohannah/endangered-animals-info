@@ -23,9 +23,9 @@ const Card = ({ animal }: CardProps) => {
     image,
     conservation_status,
     name: { common, scientific },
+    link_to_adoption,
   } = animal
   const urlToAnimal = common.toLocaleLowerCase().replaceAll(' ', '-')
-  const urlToAdopt = common.replaceAll(' ', '-')
 
   const statusBgColor = (status: string) => {
     if (status === 'Critically Endangered') return colors.red
@@ -51,7 +51,7 @@ const Card = ({ animal }: CardProps) => {
     <Box
       aria-label={`More details of ${common}`}
       w="100%"
-      h={{ base: 'xs', md: 'sm' }}
+      h={{ base: 'md', md: 'xs' }}
       borderRadius="lg"
       overflow="hidden"
       backgroundImage={image}
@@ -142,7 +142,7 @@ const Card = ({ animal }: CardProps) => {
               }}
             >
               <Link
-                href={`https://gifts.worldwildlife.org/gift-center/gifts/Species-Adoptions/${urlToAdopt}.aspx`}
+                href={link_to_adoption}
                 isExternal
                 fontFamily={fonts.heading}
                 fontSize={{ base: 'md', md: 'lg' }}
