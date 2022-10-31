@@ -22,9 +22,11 @@ const CardGroup = ({ animals }: CardGroupProps) => {
       <SimpleGrid
         as="section"
         columns={{ base: 1, md: 2 }}
-        spacingY="27"
-        spacingX={{ base: 0, md: 27 }}
+        spacingY={{ base: 8, lg: 12}}
+        spacingX={{ base: 0, md: 8, lg: 12 }}
         w="100%"
+        h="100%"
+        
       >
         {animals.map((animal) => {
           return <Card key={animal.id} animal={animal} />
