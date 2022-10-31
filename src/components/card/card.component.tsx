@@ -60,6 +60,7 @@ const Card = ({ animal }: CardProps) => {
       <Image
         src={image}
         alt={`A photo of ${common}`}
+        loading="lazy"
         w="100%"
         h="60%"
         borderTopRadius="lg"
