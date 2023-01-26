@@ -1,7 +1,7 @@
 const config = {
-  initialColorMode: "dark",
+  initialColorMode: 'light',
   useSystemColorMode: false,
-  cssVarPrefix: "eai",
-};
+  cssVarPrefix: 'eai',
+}
 
-export default config;
+export default config
