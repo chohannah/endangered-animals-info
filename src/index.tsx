@@ -8,7 +8,7 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 
 const container = document.getElementById('app')
-const root = createRoot(container!) // createRoot(container!) if you use TypeScript
+const root = createRoot(container!)
 root.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
