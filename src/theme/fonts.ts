@@ -1,5 +1,5 @@
 const fonts = {
-  heading: `'WWF', sans-serif`,
+  heading: `'Saira Extra Condensed', sans-serif`,
   body: `'Open Sans', sans-serif`,
   mono: `'Georgia', serif`, // highlighed font
 }
